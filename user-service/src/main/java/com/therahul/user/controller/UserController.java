@@ -33,8 +33,8 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    @Retry(name = "user-service",fallbackMethod = "userServiceFallback")
-//    @CircuitBreaker(name = "user-service", fallbackMethod = "userServiceFallback")
+    //@Retry(name = "user-service",fallbackMethod = "userServiceFallback")
+    @CircuitBreaker(name = "user-service", fallbackMethod = "userServiceFallback")
     public ResponseTemplateVO getUserWithDepartment(@PathVariable("userId") Long userId){
         System.out.println("Retrying...");
         return service.getUserWithDepartment(userId);
