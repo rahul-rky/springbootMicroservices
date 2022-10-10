@@ -18,13 +18,13 @@ spring:
 
 
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    instance:
-      hostname: localhost
-  instance:
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#    instance:
+#      hostname: localhost
+#  instance:
+#    prefer-ip-address: true

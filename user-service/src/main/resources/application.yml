@@ -5,45 +5,45 @@ spring:
   application:
     name: USER-SERVICE
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    instance:
-      hostname: localhost
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#    instance:
+#      hostname: localhost
 #  instance:
 #    prefer-ip-address: true
 
-management:
-  health:
-    circuitbreakers:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: health
-  endpoint:
-    health:
-      show-details: always
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      user-service:
-        registerHealthIndicator: true
-        eventConsumerBufferSize: 10
-        failureRateThreshold: 50
-        minimumNumberOfCalls: 5
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-        waitDurationInOpenState: 5s
-        permittedNumberOfCallsInHalfOpenState: 3
-        slidingWindowSize: 10
-        slidingWindowType: COUNT_BASED
-  retry:
-    instances:
-      user-service:
-        registerHealthIndicator: true
-        maxRetryAttempts: 3
-        waitDuration: 10s
+#management:
+#  health:
+#    circuitbreakers:
+#      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health
+#  endpoint:
+#    health:
+#      show-details: always
+#
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      user-service:
+#        registerHealthIndicator: true
+#        eventConsumerBufferSize: 10
+#        failureRateThreshold: 50
+#        minimumNumberOfCalls: 5
+#        automaticTransitionFromOpenToHalfOpenEnabled: true
+#        waitDurationInOpenState: 5s
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowSize: 10
+#        slidingWindowType: COUNT_BASED
+#  retry:
+#    instances:
+#      user-service:
+#        registerHealthIndicator: true
+#        maxRetryAttempts: 3
+#        waitDuration: 10s
